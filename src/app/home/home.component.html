@@ -1,0 +1,23 @@
+<script src="./home.component.ts"></script>
+<div class="container color-dark">
+    <div class="col">
+        <p>Un élément de la liste</p>
+    </div>
+    <div class="col">
+        <p>Ma liste d'éléments ({{nbItems}})</p>
+    </div>
+</div>
+<div class="container color-light" [@animobjectifs]="this.actServ.objectifs.length">
+    <div class="col">
+        <p>Un nouvel élément de la  liste</p>
+            <form>
+                <input type="text" name="newel" id="newel" class="txt" placeholder="..." [(ngModel)]="objectifText"/>
+            
+                <input type="submit" name="sbnewel" id="sbnewel" class="btn" [ngClass]="{'btn': getClass(), 'btnok': !getClass()}"  [value]="btnText"  (click)="ajoutItem(objectifText)"/>
+            </form>
+        
+    </div>
+    <div class="col">
+         <p *ngFor="let obj of this.actServ.objectifs; let i = index" (click)="this.monRouteur.navigate(['consultAct/'+i])"  class="life-container" >{{obj}} </p>
+    </div>
+</div>

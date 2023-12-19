@@ -1,0 +1,10 @@
+<p>consult-activite works! 
+    <br>
+    <div *ngIf="paramRecup != null" >
+     <b>Consultation de l'activité: {{this.paramRecup}}</b> 
+     <br> <b>Nom de l'activité: </b>  <b *ngIf="!this.editMode" >{{monService.objectifs[paramId]}}  </b>
+        <input *ngIf="this.editMode" [(ngModel)]="currentName" /> 
+     <button type="button" class="btn btn-danger" (click)="removeElem(this.paramId)"> supprimer</button>
+     <button type="button" class="btnok" (click)="switchEdit()"> modifier </button>
+
+    </div> 
