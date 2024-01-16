@@ -9,13 +9,15 @@ import { FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ConsultActiviteComponent } from './consult-activite/consult-activite.component';
 import { ActiviteService } from './services/ activite.service';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ConsultActiviteComponent
+    ConsultActiviteComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

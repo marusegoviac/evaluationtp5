@@ -2,17 +2,25 @@
     display: grid;
     grid-template-columns: 50% auto; 
 }
+.container.list {
+    display : grid ;
+    grid-template-columns : 100% auto; 
+    padding: 2em 1em;
+    color : rgb(22, 23, 24);
+}
+    
+
 
 .col {
     padding: .4em 1.3em;
 }
 
 .color-dark {
-    transform: rotate(2deg);
+  //  transform: rotate(2deg);
     background: #2885C4;
 }
 .color-light {
-        transform: rotate(-2deg);
+     //   transform: rotate(-2deg);
     background: #57B3F1,
 }
 

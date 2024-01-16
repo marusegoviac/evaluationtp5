@@ -1,23 +1,57 @@
 <script src="./home.component.ts"></script>
 <div class="container color-dark">
-    <div class="col">
-        <p>Un élément de la liste</p>
-    </div>
-    <div class="col">
-        <p>Ma liste d'éléments ({{nbItems}})</p>
-    </div>
+  <div class="col">
+    <p>Eval Angular 2024 TP Noté: <b>SEGOVIA Maria</b></p>
+  </div>
+  <div class="col">
+    <p>Ma liste d'éléments ({{ nbItems }})</p>
+  </div>
 </div>
-<div class="container color-light" [@animobjectifs]="this.actServ.objectifs.length">
-    <div class="col">
-        <p>Un nouvel élément de la  liste</p>
-            <form>
-                <input type="text" name="newel" id="newel" class="txt" placeholder="..." [(ngModel)]="objectifText"/>
-            
-                <input type="submit" name="sbnewel" id="sbnewel" class="btn" [ngClass]="{'btn': getClass(), 'btnok': !getClass()}"  [value]="btnText"  (click)="ajoutItem(objectifText)"/>
-            </form>
-        
+<div
+  class="container color-light"
+  [@animobjectifs]="this.actServ.objectifs.length"
+>
+  <div class="col">
+    <p>Saisir un titre:</p>
+    <form>
+      <input
+        type="text"
+        name="newel"
+        id="newel"
+        class="txt"
+        placeholder="..."
+        [(ngModel)]="objectifText"
+      />
+
+      <input
+        type="submit"
+        name="sbnewel"
+        id="sbnewel"
+        class="btn"
+        [ngClass]="getExplicitClass()"
+        [value]="btnText"
+        (click)="ajoutItem(objectifText)"
+      />
+    </form>
+  </div>
+</div>
+
+<div class="container color-dark">
+  <div class="row">
+    <div
+      *ngFor="let obj of this.actServ.objectifs; let i = index"
+      (click)="this.monRouteur.navigate(['consultAct/' + i])"
+      class="life-container col-6"
+    >
+      <div class="card col">
+        <div class="card-header">Titre Carte</div>
+        <div class="card-body">
+          <h5 class="card-title">Sous titre</h5>
+          <p class="card-text">Description</p>
+          <p>{{ obj }}</p>
+          <a href="#" class="btn btn-primary">Lien vers...</a>
+        </div>
+      </div>
     </div>
-    <div class="col">
-         <p *ngFor="let obj of this.actServ.objectifs; let i = index" (click)="this.monRouteur.navigate(['consultAct/'+i])"  class="life-container" >{{obj}} </p>
-    </div>
+  </div>
 </div>

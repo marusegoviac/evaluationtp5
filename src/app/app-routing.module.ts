@@ -3,6 +3,7 @@ import { RouterModule, Routes, RoutesRecognized } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import {ConsultActiviteComponent} from './consult-activite/consult-activite.component'
+import { AuthComponent } from './auth/auth.component';
 const routes: Routes = [{
   path: '',
   component: HomeComponent
@@ -10,9 +11,13 @@ const routes: Routes = [{
 {path: 'index.html',
   component: HomeComponent
 },
- {
+{
   path: 'about',
   component: AboutComponent
+},
+{
+  path: 'auth',
+  component: AuthComponent
 },
 {
   path: 'consultAct',

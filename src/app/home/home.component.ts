@@ -46,7 +46,16 @@ export class HomeComponent implements OnInit {
   ajoutItem(el: string): void {
     this.actServ.objectifs.push(el);
     this.nbItems++;
-    setTimeout(()=>{this.monRouteur.navigate(['about'])}, 3000);
+    /*setTimeout(()=>{this.monRouteur.navigate(['about'])}, 3000);*/
+  }
+
+  getExplicitClass(){
+    if (this.objectifText == "..."|| this.objectifText == "")
+    {
+      return 'btn'
+    }else{
+      return 'btnok'
+    }
   }
   getClass(){
     if (this.objectifText == "..."|| this.objectifText == "")
